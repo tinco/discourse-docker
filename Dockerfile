@@ -15,3 +15,8 @@ RUN useradd discourse -s /bin/bash -m -U &&\
          --without test --without development &&\
     cd /app/vendor/bundle &&\
        find . -name tmp -type d | xargs rm -rf && cd /app
+
+ADD start.sh /app/start
+ADD rake.sh /app/rake
+
+RUN chmod +x /app/start /app/rake
