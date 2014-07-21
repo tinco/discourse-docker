@@ -1,6 +1,6 @@
 FROM phusion/passenger-ruby21:0.9.11
 
-MAINTAINER Tinco Andringa "twistlock@tinco.nl"
+MAINTAINER Tinco Andringa "mail@tinco.nl"
 
 RUN echo "debconf debconf/frontend select Teletype" | debconf-set-selections &&\
     apt-get update && apt-get -y install build-essential libssl-dev libyaml-dev git libtool \
@@ -18,5 +18,7 @@ RUN useradd discourse -s /bin/bash -m -U &&\
 
 ADD start.sh /app/start
 ADD rake.sh /app/rake
+
+ADD discourse.conf /app/config/discourse.conf
 
 RUN chmod +x /app/start /app/rake
