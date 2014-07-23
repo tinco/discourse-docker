@@ -1,4 +1,4 @@
-FROM tinco/discourse-docker-base:0.0.2
+FROM tinco/discourse-docker-base:0.0.3
 
 MAINTAINER Tinco Andringa "mail@tinco.nl"
 
